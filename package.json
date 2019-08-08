@@ -1,0 +1,70 @@
+{
+  "name": "node-collection",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "tsc": "./node_modules/.bin/tsc -p ./tsconfig.json",
+    "lint": "eslint .",
+    "test": "npm run tsc && mocha --require intelli-espower-loader",
+    "coverage": "nyc npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miser/node-collection.git"
+  },
+  "author": "udmiser",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miser/node-collection/issues"
+  },
+  "homepage": "https://github.com/miser/node-collection#readme",
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^0.1.3",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.6.9",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "esm": "^3.2.25",
+    "espower-typescript": "^9.0.2",
+    "intelli-espower-loader": "^1.0.1",
+    "ip": "^1.1.5",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "power-assert": "^1.6.1",
+    "prettier": "^1.18.2",
+    "source-map-support": "^0.5.13",
+    "ts-node": "^8.3.0"
+  },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "include": [
+      "src/*.ts",
+      "src/*.tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "test"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "all": true
+  },
+  "dependencies": {
+    "typescript": "^3.5.3"
+  }
+}
