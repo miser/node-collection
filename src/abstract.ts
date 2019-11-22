@@ -20,7 +20,7 @@ export abstract class AbstractCollection {
     this.store.push(collect)
   }
 
-  async collect(): Promise<Map<string, any>> {
+  collect(): Promise<Map<string, any>> {
     return new Promise(resolve => {
       const map = new Map()
       const arr = []
